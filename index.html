@@ -46,9 +46,9 @@
       <p><strong>Font-Family</strong></p>
       <select name="font_family" id="font_family" class="form-control">
         <option>Seleccione tipografía</option>
-        <option>"Times New Roman", Times, serif</option>
-        <option>Arial, Helvetica, sans-serif</option>
-        <option>Impact, Charcoal, sans-serif </option>
+        <option value= "times" >Times New Roman, Times, serif</option>
+        <option value="arial" >Arial, Helvetica, sans-serif</option>
+        <option value="impact" >Impact, Charcoal, sans-serif </option>
       </select>
       <br>
       <p><strong>Background-color</strong></p>
@@ -95,6 +95,21 @@
       $('#contenedor').css('font-size', nuevaFuente);
       return false;
       });
+
+      $("#font_family").change(function(){
+        if ($('select[id=font_family]').val() == "times") {
+          $("#contenedor").css('font-family','"Times New Roman", Times, serif');
+        };
+        if ($('select[id=font_family]').val() == "arial") {
+          $("#contenedor").css('font-family', 'Arial, Helvetica, sans-serif');
+        };
+        if ($('select[id=font_family]').val() == "impact") {
+          $("#contenedor").css('font-family', 'Impact, Charcoal, sans-serif');
+        };
+        return false;
+      });
+            
+
 
       });
     </script>

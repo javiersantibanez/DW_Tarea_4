@@ -39,8 +39,8 @@
     <div class="designer">
       <h3>Toolbar</h3>
       <p><strong>Font-size</strong></p>
-      <input type="button" value="+" name="font_size_more" id="font_size_more" class="btn btn-primary">
-      <input type="button" value="-" name="font_size_less" id="font_size_less" class="btn btn-default">
+      <input type="button" value="+" name="font_size_more" id="font_size_more" class="btn btn-primary aumentar">
+      <input type="button" value="-" name="font_size_less" id="font_size_less" class="btn btn-default disminuir">
       <br>
       <br>
       <p><strong>Font-Family</strong></p>
@@ -56,7 +56,7 @@
       
 
     </div>
-    <div class="container">
+    <div class="container" id="contenedor">
         <h1>Hello, world!</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde esse, minima qui magni et quae ab neque, quod ad aliquam, impedit ipsa optio autem nihil magnam. Accusamus, quia, dolores!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde esse, minima qui magni et quae ab neque, quod ad aliquam, impedit ipsa optio autem nihil magnam. Accusamus, quia, dolores!</p>
@@ -75,6 +75,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+      
+      $(document).ready(function(){
+
+      $(".aumentar").click(function(){
+      var tamActual = $('#contenedor').css('font-size');
+      var tamActualNum = parseFloat(tamActual, 10);
+      var nuevaFuente = tamActualNum+1;
+      $('#contenedor').css('font-size', nuevaFuente);
+      return false;
+      });
+      
+      $(".disminuir").click(function(){
+      var tamActual = $('#contenedor').css('font-size');
+      var tamActualNum = parseFloat(tamActual, 10)
+      var nuevaFuente = tamActualNum-1;
+      $('#contenedor').css('font-size', nuevaFuente);
+      return false;
+      });
+
+      });
+    </script>
 
   </body>
 </html>

@@ -80,6 +80,7 @@
       
       $(document).ready(function(){
 
+      //Aumentar tamaño fuente
       $(".aumentar").click(function(){
       var tamActual = $('#contenedor').css('font-size');
       var tamActualNum = parseFloat(tamActual, 10);
@@ -88,6 +89,7 @@
       return false;
       });
       
+      //Disminuir tamaño fuente
       $(".disminuir").click(function(){
       var tamActual = $('#contenedor').css('font-size');
       var tamActualNum = parseFloat(tamActual, 10)
@@ -96,6 +98,7 @@
       return false;
       });
 
+      //Cambiar tipo de fuente
       $("#font_family").change(function(){
         if ($('select[id=font_family]').val() == "times") {
           $("#contenedor").css('font-family','"Times New Roman", Times, serif');
@@ -108,7 +111,12 @@
         };
         return false;
       });
-            
+      
+      //Cambiar color de fondo
+      $('#bgcolor').change(function(){
+        var color = $('input[id=bgcolor]').val()
+        $('#contenedor').css('background-color',color);
+      });
 
 
       });
